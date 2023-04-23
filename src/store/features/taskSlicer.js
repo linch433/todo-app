@@ -14,9 +14,20 @@ export const taskSlicer = createSlice({
     },
     deleteTask: (state, action) => {
       state.taskAction = state.taskAction.filter((task) => task.id !== action.payload.id);
+    },
+    updateTask: (state, action) => {
+      state.taskAction.map((item) => {
+        if (item.id === action.payload.id) {
+          item.task = action.payload.task;
+        }
+      })
     }
   },
 });
 
-export const {addTask, deleteTask} = taskSlicer.actions;
+export const {
+  addTask,
+  deleteTask,
+  updateTask
+} = taskSlicer.actions;
 export default taskSlicer.reducer;

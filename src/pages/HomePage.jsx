@@ -3,7 +3,6 @@ import {useSelector, useDispatch} from "react-redux";
 import {addTask} from "../store/features/taskSlicer.js";
 import TaskViewComponent from "../components/TaskViewComponent.jsx";
 
-
 const HomePage = () => {
   const tasksList = useSelector((state) => state.tasks.taskAction);
   const dispatch = useDispatch();
@@ -12,9 +11,10 @@ const HomePage = () => {
 
   const handleAddTask = () => {
     dispatch(addTask({
-      id: tasksList[tasksList.length - 1].id + 1,
+      id: tasksList.length !== 0 ? tasksList[tasksList.length - 1].id + 1 : 1,
       task
-    }))
+    }));
+    setTask('');
   };
 
   const handleInputChange = (e) => {
@@ -30,6 +30,7 @@ const HomePage = () => {
         <div className="flex flex-row items-center mb-4">
           <input
             name="taskText"
+            value={task}
             className="px-4 py-2 border border-gray-400 rounded-md w-full"
             onChange={handleInputChange}
           />
