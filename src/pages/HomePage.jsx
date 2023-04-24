@@ -43,8 +43,8 @@ const HomePage = () => {
             Add
           </button>
         </div>
-        {tasksList.map((item, index) => (
-          <TaskViewComponent key={index} taskName={item}/>
+        {tasksList.map((item) => (
+          <TaskViewComponent key={item.id} taskName={item}/>
         ))}
       </div>
     </div>
