@@ -10,10 +10,12 @@ const HomePage = () => {
   const [task, setTask] = useState('');
 
   const handleAddTask = () => {
-    dispatch(addTask({
-      id: tasksList.length !== 0 ? tasksList[tasksList.length - 1].id + 1 : 1,
-      task
-    }));
+    if (task !== '') {
+      dispatch(addTask({
+        id: tasksList.length !== 0 ? tasksList[tasksList.length - 1].id + 1 : 1,
+        task
+      }));
+    }
     setTask('');
   };
 
