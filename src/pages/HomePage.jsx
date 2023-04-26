@@ -30,12 +30,13 @@ const HomePage = () => {
         <div className="flex flex-row items-center mb-4">
           <input
             name="taskText"
+            placeholder="Write your task here"
             value={task}
             className="px-4 py-2 border border-gray-400 rounded-md w-full"
             onChange={handleInputChange}
           />
           <button
-            className="bg-amber-700 text-white px-4 py-2 ml-4 rounded-md hover:bg-amber-600 transition-colors"
+            className="bg-buttons-bg text-white px-4 py-2 ml-4 rounded-md hover:bg-buttons-hover-bg transition-colors"
             onClick={() => {
               handleAddTask()
             }}

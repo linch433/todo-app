@@ -27,7 +27,7 @@ function TaskViewComponent({taskName}) {
   }
 
   return (
-    <div className='bg-amber-500 p-6 mb-4 flex flex-row justify-between'>
+    <div className='bg-secondary-bg p-6 mb-4 flex flex-row justify-between'>
       <div className='flex justify-center items-center gap-2'>
         <input
           value={newTask}
@@ -35,7 +35,7 @@ function TaskViewComponent({taskName}) {
           onChange={(e) => {
             setNewTask(e.target.value);
           }}
-          className={`${isInputDisabled === true ? `bg-transparent` : `bg-amber-200`}`}/>
+          className={`${isInputDisabled === true ? `bg-transparent` : `bg-input-bg`} p-0.5`}/>
         <ButtonIcon
           onClickFunction={handleUpdateTask}
           srcForImage={doneIcon}
