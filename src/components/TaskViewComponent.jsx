@@ -35,7 +35,7 @@ function TaskViewComponent({taskName}) {
           onChange={(e) => {
             setNewTask(e.target.value);
           }}
-          className={`${isInputDisabled === true ? `bg-transparent` : `bg-input-bg`} h-[28.8px] w-3/4`}/>
+          className={`${isInputDisabled === true ? `bg-transparent` : `bg-input-bg`} h-[28.8px] w-3/4 disabled:text-black`}/>
         <ButtonIcon
           onClickFunction={handleUpdateTask}
           srcForImage={doneIcon}
